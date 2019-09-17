@@ -1,5 +1,6 @@
 import { Component, Input} from '@angular/core'
 //import { EventEmitter } from 'protractor'
+declare let toastr
 
 @Component(
     {
