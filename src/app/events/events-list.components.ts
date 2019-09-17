@@ -4,7 +4,6 @@ import { ToastrServices } from '../common/Toastr.Service';
 
 @Component(
     {
-        selector: 'events-list',
         template:
         `<div>
             <h1> Upcoming Angular Events</h1>
