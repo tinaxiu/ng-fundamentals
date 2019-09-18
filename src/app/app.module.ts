@@ -17,6 +17,7 @@ import { Error404Component } from './error/404.component';
 import { EventRouteActivator } from './events/event-details/event-route-activator.service';
 
 
+
 @NgModule({
   declarations: [
     EventsAppComponent,
@@ -33,8 +34,23 @@ import { EventRouteActivator } from './events/event-details/event-route-activato
     ToastrModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [EventService, ToastrServices,EventRouteActivator],
+  providers: [
+    EventService, 
+    ToastrServices,
+    EventRouteActivator,
+    {
+      provide: 'canDeactivateCreateEvent',
+      useValue: checkDirtyState 
+    }
+  ],
   bootstrap: [EventsAppComponent]
 
 })
 export class AppModule { }
+
+export function checkDirtyState(component: CreatEventComponent)
+{
+  if(component.isDirty)
+    return window.confirm('You have not saved this event, do you reaaly want to cancel?')
+  return true
+}
