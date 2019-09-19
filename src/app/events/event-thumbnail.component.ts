@@ -1,4 +1,5 @@
 import { Component, Input} from '@angular/core'
+import { IEvent } from './shared';
 //import { EventEmitter } from 'protractor'
 declare let toastr
 
@@ -41,7 +42,7 @@ declare let toastr
 
 export class EventThumbnailComponent
 {
-    @Input() event:any
+    @Input() event:IEvent
 
     getStartTimeClass()
     {
