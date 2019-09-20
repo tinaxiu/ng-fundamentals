@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
-import { ISeesion, restrictedWords } from '../shared';
+import { ISession, restrictedWords } from '../shared';
 
 @Component({
     templateUrl: './create-session.component.html',
@@ -48,7 +48,7 @@ export class CreateSessionComponent implements OnInit
     }
     saveSession(formValues)
     {
-        let session:ISeesion = {
+        let session:ISession = {
             id: undefined,
             voters: [],
             name :formValues.name,
