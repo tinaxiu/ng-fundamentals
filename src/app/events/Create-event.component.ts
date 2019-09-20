@@ -26,6 +26,15 @@ export class CreatEventComponent
 
     }
 
+    ngOnInit()
+    {
+        this.newEvent = {
+            name: 'Ng Spectacular',
+            date: '8/8/2028',
+            time: '10:00 am',
+            price: 800
+        }
+    }
     saveEvent(formValues) 
     {
         this.eventService.saveEvent(formValues)
